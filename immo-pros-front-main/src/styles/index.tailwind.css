@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Lato', sans-serif;
+    height: -webkit-fill-available;
+  }
+  body {
+    height: 100vh;
+    display: flex;
+    height: -webkit-fill-available;
+    overscroll-behavior: none;
+  }
+  /* Hide Arrows for input type number */
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  /* Input style */
+  input[type='text'],
+  input[type='search'],
+  input[type='number'],
+  input[type='email'],
+  input[type='password'],
+  input[type='date'],
+  textarea {
+    @apply px-2 py-2 duration-150 border-2 rounded-md focus:ring-2 ring-accent-300 sm:px-3;
+  }
+  textarea:focus {
+    @apply outline-none;
+  }
+  button,
+  a {
+    @apply outline-accent-300;
+  }
+  h1 {
+    @apply text-2xl font-semibold text-center font-poppins md:text-3xl;
+  }
+  h2 {
+    @apply text-xl font-semibold font-poppins md:text-2xl;
+  }
+  h3 {
+    @apply text-lg font-semibold font-poppins md:text-xl;
+  }
+  em {
+    @apply italic;
+  }
+}
+
+/* Scroll Bar Style */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-secondary-200;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 99px;
+  @apply bg-secondary-500 shadow-custom;
+}
+
+/* Clear the "X" from Chrome on input type search */
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  display: none;
+}
+
+/* Clear autofill style */
+input:-webkit-autofill {
+  @apply font-lato;
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+/* Remove the blue backeground on click - Mobile */
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
